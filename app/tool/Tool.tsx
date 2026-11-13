@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import ProfileEditor from "./ProfileEditor";
 
 type Tender = { id: string; title: string | null; reference: string | null; requirement_count: number };
 
@@ -171,21 +172,7 @@ export default function Tool() {
         </section>
       )}
 
-      <section className="rounded-xl border border-slate-200 bg-white p-6">
-        <details>
-          <summary className="cursor-pointer text-lg font-semibold">2. Company profile (simulated, editable)</summary>
-          <p className="mt-2 text-sm text-slate-600">
-            Matching only uses what is written here. Edit it to describe any company, save, then run the match again.
-            Certifications and case studies are empty on purpose, so nothing is claimed without evidence.
-          </p>
-          <textarea value={profileText} onChange={(e) => setProfileText(e.target.value)} rows={14}
-            className="mt-3 w-full rounded-lg border border-slate-300 bg-white p-3 font-mono text-xs text-slate-900" />
-          <div className="mt-2 flex items-center gap-3">
-            <button onClick={saveProfile} className="rounded-lg bg-slate-800 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-700">Save profile</button>
-            {profileMsg && <span className="text-sm text-slate-600">{profileMsg}</span>}
-          </div>
-        </details>
-      </section>
+      <ProfileEditor />
 
       {opp && (
         <section className="space-y-5">
