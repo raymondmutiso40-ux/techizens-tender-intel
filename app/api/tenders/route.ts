@@ -4,13 +4,14 @@ import { readDb, writeDb } from "@/lib/store";
 import { pdfPages } from "@/lib/pdf";
 import { extractTender, quoteExists } from "@/lib/extract";
 
-
 export async function POST(req: Request) {
   try {
     const form = await req.formData();
     const file = form.get("file") as File | null;
     const sourceUrl = (form.get("source_url") as string) || null;
     if (!file) return NextResponse.json({ error: "No file" }, { status: 400 });
+    if (file.size > 4 * 1024 * 1024)
+      return NextResponse.json({ error: "File is larger than 4 MB. Use a smaller PDF." }, { status: 413 });
 
     const pages = await pdfPages(await file.arrayBuffer());
     if (pages.join("").trim().length < 200)
@@ -37,10 +38,10 @@ export async function POST(req: Request) {
       };
     });
 
-    const db = readDb();
-    db.opportunities.push(opp);
+    const db = await readDb();
+    db.opportunities.push({ ...opp, pages });
     db.requirements.push(...reqs);
-    writeDb(db);
+    await writeDb(db);
 
     return NextResponse.json({ opportunity: opp, requirements: reqs });
   } catch (e: any) {
@@ -49,7 +50,7 @@ export async function POST(req: Request) {
 }
 
 export async function GET() {
-  const db = readDb();
+  const db = await readDb();
   const tenders = db.opportunities
     .filter((o: any) => o.kind === "tender")
     .map((o: any) => ({
