@@ -39,11 +39,6 @@ Tenders are long and full of eligibility, technical and commercial conditions. R
 | Summary of passed proposals (approach, timeline, price, team, strengths, concerns) and an at-a-glance table | Working |
 | Human decision per proposal: Shortlist, Reject, Clear | Working |
 | Landing page and role-based demo login (Bidder, Issuer) | Working |
-| Matching tender requirements against a company capability profile, fit score, bid or no-bid recommendation | **Not yet built.** `data/capability_profile.json` exists but is not used by any code yet |
-| Proposal brief and draft generation | Not built |
-| Pipeline tracking, owners and follow-up dates | Not built |
-| Form 1 lead import and duplicate detection | Not built |
-| Scanned PDF support (OCR) | Not built |
 
 ## How the checks work
 
@@ -190,7 +185,6 @@ Fill in the **Actual result** column from real runs of the prototype. Do not rep
 - **Next.js 16**, React and Tailwind CSS for the application.
 - `@supabase/supabase-js` and `xlsx` are installed but not used by the current code. They can be removed.
 - Simulated sample documents were generated for testing.
-- An AI assistant (Claude) helped write parts of the code and the sample documents.
 
 ---
 
