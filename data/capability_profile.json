@@ -1,0 +1,17 @@
+{
+  "_note": "SIMULATED profile for the hackathon. Replace with Zanari's approved profile.",
+  "company": "Zanari Analytics (simulated)",
+  "sectors": ["Healthcare", "Education", "Financial Services", "Real Estate", "Manufacturing", "Transport", "Public Sector"],
+  "services": [
+    { "name": "BI & Analytics", "use_cases": ["dashboards", "KPI reporting", "data visualization"], "tools": ["Power BI", "Superset"], "exclusions": [] },
+    { "name": "Data Engineering", "use_cases": ["ETL/ELT", "data warehouse", "system integration"], "tools": [], "exclusions": [] },
+    { "name": "AI / ML", "use_cases": ["predictive analytics", "document AI"], "tools": [], "exclusions": ["autonomous decisions without human review"] },
+    { "name": "Custom Software", "use_cases": ["web apps", "workflow automation"], "tools": ["Next.js"], "exclusions": ["specialist ERP platform support (unconfirmed)"] }
+  ],
+  "hosting": ["client-hosted", "client cloud", "Zanari-managed cloud", "hybrid"],
+  "licensing": ["subscription", "one-time", "per-user", "usage-based", "third-party", "open-source"],
+  "certifications": [],
+  "case_studies": [],
+  "pricing_guardrails": "PLACEHOLDER: approved ranges required from commercial approver",
+  "qualification_rules": { "min_fit_to_pursue": 70, "investigate_range": [40, 69] }
+}
