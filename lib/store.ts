@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import { Redis } from "@upstash/redis";
 
-export type Db = { opportunities: any[]; requirements: any[]; proposals: any[] };
+export type Db = { opportunities: any[]; requirements: any[]; proposals: any[]; profile?: any };
 
 const url = process.env.UPSTASH_REDIS_REST_URL ?? process.env.KV_REST_API_URL;
 const token = process.env.UPSTASH_REDIS_REST_TOKEN ?? process.env.KV_REST_API_TOKEN;

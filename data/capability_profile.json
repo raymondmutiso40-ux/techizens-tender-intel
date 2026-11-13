@@ -1,5 +1,5 @@
 {
-  "_note": "SIMULATED profile for the hackathon. Replace with Zanari's approved profile.",
+  "_note": "SIMULATED profile for demonstration. Edit it in the app to match any company.",
   "company": "Zanari Analytics (simulated)",
   "sectors": ["Healthcare", "Education", "Financial Services", "Real Estate", "Manufacturing", "Transport", "Public Sector"],
   "services": [
@@ -8,10 +8,15 @@
     { "name": "AI / ML", "use_cases": ["predictive analytics", "document AI"], "tools": [], "exclusions": ["autonomous decisions without human review"] },
     { "name": "Custom Software", "use_cases": ["web apps", "workflow automation"], "tools": ["Next.js"], "exclusions": ["specialist ERP platform support (unconfirmed)"] }
   ],
+  "registrations": ["Company registered in Kenya (simulated)"],
+  "certifications": [],
+  "known_gaps": [
+    "No ISO 27001 certification currently held",
+    "No vendor authorization for third-party hospital management systems"
+  ],
+  "case_studies": [],
   "hosting": ["client-hosted", "client cloud", "Zanari-managed cloud", "hybrid"],
   "licensing": ["subscription", "one-time", "per-user", "usage-based", "third-party", "open-source"],
-  "certifications": [],
-  "case_studies": [],
-  "pricing_guardrails": "PLACEHOLDER: approved ranges required from commercial approver",
+  "pricing_guardrails": "PLACEHOLDER: approved ranges required from a commercial approver",
   "qualification_rules": { "min_fit_to_pursue": 70, "investigate_range": [40, 69] }
 }
